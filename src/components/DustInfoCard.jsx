@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import * as S from './style';
 
 function DustInfoCard() {
@@ -32,10 +33,10 @@ function DustInfoCard() {
       {data && data.map(element => {
         return (
           <S.Card color={element.pm10Grade}  key={element.stationName}>
-            <div className="location">
+            <S.Location className="location">
               <S.Title>{element.stationName}</S.Title><S.Sido className="sido">{element.sidoName}</S.Sido>
-              
-            </div>
+              <S.StarButton>{<AiOutlineStar/>}</S.StarButton>
+            </S.Location>
             <S.Info className="info">
               <S.DustLv color={element.pm10Grade} className="dust-lv">
                 {element.pm10Grade === '1' ? '좋음' 

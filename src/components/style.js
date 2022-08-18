@@ -15,6 +15,10 @@ export const Card = styled.div`
   border-radius: 7px;
   box-shadow: 1px 1px 6px #aaa;
 `
+export const Location = styled.div`
+  display: flex;
+  align-items: flex-end;
+`
 
 export const Title = styled.h4`
   display: inline-block;
@@ -25,7 +29,19 @@ export const Title = styled.h4`
 `
 
 export const Sido = styled.span`
+  flex-grow: 1;
   font-size: 12px;
+`
+
+export const StarButton = styled.button`
+  display: inline-block;
+  padding: 0;
+  font-size: 22px;
+  line-height: 0px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
 `
 
 export const Info = styled.div`
@@ -36,7 +52,7 @@ export const Info = styled.div`
 `
 
 export const DustLv = styled.div`
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 5px;
   font-size: 35px;
   line-height: 40px;
