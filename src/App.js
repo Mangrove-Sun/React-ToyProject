@@ -1,9 +1,9 @@
-import GlobalStyles from './components/GlobalStyles';
-import { Link, Routes, Route } from 'react-router-dom';
-import MyLocation from './components/MyLocation';
+import GlobalStyles from './style/GlobalStyles';
+import { Routes, Route } from 'react-router-dom';
+import MyLocation from './components/MySido';
 import WholeSido from './components/WholeSido';
-import FavoritesList from './components/FavoritesList';
-import BottomTapMenu from './components/BottomTapMenu';
+import FavoritesList from './components/Favorites';
+import BottomTapMenu from './components/TapMenu';
 
 
 function App() {

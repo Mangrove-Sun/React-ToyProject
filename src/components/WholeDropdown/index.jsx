@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { SidoData } from '../constants/SidoData'
-import DustInfoCard from './DustInfoCard';
+import { SidoData } from '../../constants/SidoData'
+import DustInfoCard from '../Card';
 
 function DropdownMenu() {
   const [selectedSido, setSelectedSido] = useState('서울');
