@@ -3,14 +3,14 @@ import axios from 'axios';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import * as S from './style';
 
-function DustInfoCard() {
+function DustInfoCard({sido}) {
 
   const getParameters = {
     serviceKey: process.env.REACT_APP_SERVICE_KEY,
     returnType: 'json',
     numOfRows: '100',
     pageNo: '1',
-    sidoName: '서울',
+    sidoName: sido,
     ver: '1.0'
   }
 
@@ -26,7 +26,7 @@ function DustInfoCard() {
 
   useEffect(() => {
     getData()
-  }, [])
+  }, [sido])
 
   return (
     <div>
