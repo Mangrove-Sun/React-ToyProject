@@ -15,22 +15,29 @@ function DustInfoCard({sido}) {
   }
 
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const getData = async() => {
     try {
+      setIsLoading(true);
       const res = await axios.get('B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty', {params: getParameters});
       setData(res.data.response.body.items);
+      setIsLoading(false);
     } catch (e) {
       console.log(e);
     }
   };
 
   useEffect(() => {
-    getData()
+    if (!isLoading) getData();
   }, [sido])
 
+  
   return (
     <div>
-      {data && data.map(element => {
+      {isLoading ?
+      <S.Loading></S.Loading> :
+      <>
+        {data && data.map(element => {
         return (
           <S.Card color={element.pm10Grade}  key={element.stationName}>
             <S.Location className="location">
@@ -53,6 +60,8 @@ function DustInfoCard({sido}) {
           </S.Card>
         )
       })}
+      </>}
+      
     </div>
   )
 }
