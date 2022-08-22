@@ -10,17 +10,20 @@ function DropdownMenu() {
 
   const selectHandler = (e) => {
     setSelectedSido(e.target.value);
-    localStorage.setItem('sido',JSON.stringify(e.target.value))
+    localStorage.setItem('sido',JSON.stringify(e.target.value));
   }
 
   const getSido = () => {
-    if (!sido) setSelectedSido('전국');
+    if (!sido) {
+      setSelectedSido('전국');
+      localStorage.setItem('sido',JSON.stringify('전국'));
+    }
   }
   useEffect(() => {
     getSido()
   }, [])
 
-  
+  if (!!selectedSido)
   return (
     <>
       <S.Menu>

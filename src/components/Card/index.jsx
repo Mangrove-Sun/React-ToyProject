@@ -38,30 +38,29 @@ function DustInfoCard({sido}) {
       <S.Loading></S.Loading> :
       <>
         {data && data.map(element => {
-        return (
-          <S.Card color={element.pm10Grade}  key={element.stationName}>
-            <S.Location className="location">
-              <S.Title>{element.stationName}</S.Title><S.Sido className="sido">{element.sidoName}</S.Sido>
-              <S.StarButton>{<AiOutlineStar/>}</S.StarButton>
-            </S.Location>
-            <S.Info className="info">
-              <S.DustLv color={element.pm10Grade} className="dust-lv">
-                {element.pm10Grade === '1' ? '좋음' 
-                  : element.pm10Grade === '2' ? '보통' 
-                  : element.pm10Grade === '3' ? '한때나쁨' 
-                  : element.pm10Grade === '4' ? '나쁨' 
-                  : element.pm10Grade === '5' ? '매우나쁨' : '알수없음'}
-              </S.DustLv>
-              <div className="dust-stats">
-                <S.DustInfo>미세먼지 수치: {element.pm10Value}</S.DustInfo>
-                <S.DustInfo>({element.dataTime} 기준)</S.DustInfo>
-              </div>
-            </S.Info>
-          </S.Card>
-        )
-      })}
+          return (
+            <S.Card color={element.pm10Grade}  key={element.stationName}>
+              <S.Location className="location">
+                <S.Title>{element.stationName}</S.Title><S.Sido className="sido">{element.sidoName}</S.Sido>
+                <S.StarButton>{<AiOutlineStar/>}</S.StarButton>
+              </S.Location>
+              <S.Info className="info">
+                <S.DustLv color={element.pm10Grade} className="dust-lv">
+                  {element.pm10Grade === '1' ? '좋음' 
+                    : element.pm10Grade === '2' ? '보통' 
+                    : element.pm10Grade === '3' ? '한때나쁨' 
+                    : element.pm10Grade === '4' ? '나쁨' 
+                    : element.pm10Grade === '5' ? '매우나쁨' : '알수없음'}
+                </S.DustLv>
+                <div className="dust-stats">
+                  <S.DustInfo>미세먼지 수치: {element.pm10Value}</S.DustInfo>
+                  <S.DustInfo>({element.dataTime} 기준)</S.DustInfo>
+                </div>
+              </S.Info>
+            </S.Card>
+          )
+        })}
       </>}
-      
     </div>
   )
 }

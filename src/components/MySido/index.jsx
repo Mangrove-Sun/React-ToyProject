@@ -1,9 +1,9 @@
 import React from 'react'
 
-function MyLoaction() {
+function MyLocation() {
   return (
-    <div>MyLoaction</div>
+    <div>MyLocation</div>
   )
 }
 
-export default MyLoaction
+export default MyLocation

@@ -11,6 +11,7 @@ function App() {
     <div>
       <GlobalStyles/>
       <Routes>
+        <Route index element={<MyLocation/>}/>
         <Route path="mylocation" element={<MyLocation/>}/>
         <Route path="wholesido" element={<WholeSido/>}/>
         <Route path="favoritelist" element={<FavoritesList/>}/>
